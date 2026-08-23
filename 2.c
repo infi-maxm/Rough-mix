@@ -23,7 +23,7 @@ void binarySearch(int n,int arr[n],int val){
     int count=0;
 
     for(int i=0;i<(n-1);i++){
-        for(int j=i+1;i<n;i++){
+        for(int j=i+1;j<n;i++){
             if(arr[i]>arr[j]){
                 int temp=arr[i];
                 arr[i]=arr[j];
@@ -35,8 +35,8 @@ void binarySearch(int n,int arr[n],int val){
     int left=0;
     int right=(n-1);
 
-    while(left<right){
-        int mid=(right-left)/2;
+    while(left<=right){
+        int mid=left+(right-left)/2;
         count++;
         if(arr[mid]==val){
             printf("Value found\n");
@@ -44,9 +44,9 @@ void binarySearch(int n,int arr[n],int val){
             return;
         }
         else if(arr[mid]<val){
-            left=mid;
+            left=mid+1;
         }else{
-            right=mid;
+            right=mid-1;
         }
     }
 
