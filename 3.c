@@ -11,6 +11,7 @@ void bubbleSort(int n,int arr[n]){
     int count_swaps=0;
 
     for(int i=0;i<(n-1);i++){
+        int swapped=0;
         for(int j=0;j<(n-i-1);j++){
             count_comparisons++;
             if(arr[j]>arr[j+1]){
@@ -18,7 +19,11 @@ void bubbleSort(int n,int arr[n]){
                 arr[j]=arr[j+1];
                 arr[j+1]=temp;
                 count_swaps++;
+                swapped=1;
             }
+        }
+        if(swapped==0){
+            break;
         }
     }
 
