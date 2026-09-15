@@ -45,16 +45,16 @@ class Demo{
 }
 
 class Invoice{
-       private partno;
-       private desc;
-       private quantity;
-       private price;
+       private String partno;
+       private String desc;
+       private int quantity;
+       private double price;
 
     public Invoice(){
-        partno="A201"
-        desc="september invoice.."
-        quantity=12
-        price=1350;
+        partno="A201";
+        desc="september invoice..";
+        quantity=0;
+        price=0.0;
     }
 
     public Invoice(String p,String d,int q,double price){
@@ -73,11 +73,17 @@ class Invoice{
     }
 
     public static setQuantity(int quantity){
-        this.quantity=quantity;
+        if(quantity<0)
+            this.quantity=0;
+        else
+            this.quantity=quantity;
     }
 
     public static setPrice(double price){
-        this.price=price;
+        if(price<0)
+            this.price=0;
+        else
+            this.price=price;
     }
 
     public static getPartNo(String partno){return partno;}
@@ -87,5 +93,10 @@ class Invoice{
     public static getQuantity(int quantity){return quatity;}
 
     public static getPrice(double price){return price;}
+
+    double getInvoiceAmount(){
+        double a=quantity*price;
+        returns a;
+    }
 
 }
